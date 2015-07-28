@@ -1,0 +1,37 @@
+---
+
+# apache_repository: ppa:ptn107/apache
+apache_repository: false
+
+apache_install:
+  - apache2
+    # Note: rsync is required by the key copy command in vhosts.yml used
+    # to copy ssl keys stored on the remote node. When Ansible has a
+    # core module that supports remote -> remote copy this dependency
+    # can be removed.
+  - rsync
+
+apache_module_disable: false
+apache_module_enable:
+  - rewrite
+  # - ssl
+
+apache_site_disable:
+  - 000-default
+  - default-ssl
+apache_site_enable:
+  - software_sil_org.conf
+
+apache_vhosts:
+  - server_name: software.sil.org
+    server_admin: webmaster@palaso.org
+    server_file_name: software_sil_org
+    template: vhost_ssl.conf.j2
+    document_root: /var/www/virtual/software.sil.org/htdocs
+    directory_extra:
+      - RewriteEngine On
+    virtual_hosts:
+      - has_ssl: false
+        port: 80
+        server_alias: 
+          - software.sil.local

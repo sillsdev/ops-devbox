@@ -1,0 +1,16 @@
+mysql_backup: no
+
+mysql_bind_address: '127.0.0.1'
+
+mysql_databases:
+  - name: 'sil_software_dev'  
+
+mysql_users:
+  - name: "{{lookup('env', 'USER')}}"
+    pass: "{{lookup('env', 'password_db')}}"
+    priv:
+      - 'sil_software_dev.*:ALL'
+  - name: "vagrant"
+    pass: ""
+    priv:
+      - 'sil_software_dev.*:ALL'
