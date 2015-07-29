@@ -13,7 +13,7 @@ er, the only playbooks.
 Install off USB.
 
 1. Download the iso.
-1. Copy the iso following these instructions.
+1. Copy the iso following [these instructions](http://community.linuxmint.com/tutorial/view/744).
 1. Install Mint, clicking next as required.
 
 ### Partitioning ###
