@@ -20,8 +20,8 @@ Install off USB.
 
 If you have a modest SSD installed, say 250G or so with perhaps an additional spinning media.  We recommend partitioning like so:
 
-![SSD Partitioning](docs/ssd.png) 
-![HDD Partitioning](docs/hdd.png)
+![SSD Partitioning](docs/ssd.png?raw=true) 
+![HDD Partitioning](docs/hdd.png?raw=true)
 
 Notable features:
 
