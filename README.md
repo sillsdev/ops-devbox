@@ -65,3 +65,11 @@ You might want to open the systems resource monitor to check on your network tra
 
 I like remarkable as a markdown editor.  However, its no longer in the repos for the latest Mint.  You need to install it manually (via deb) from [this website](http://remarkableapp.github.io/).
 
+### Known to Work With ###
+
+This procedure has been known to work with:
+
+* Linux Mint 17.1
+* Linux Mint 17.2
+* Ubuntu 14.04 (Trusty)
+
