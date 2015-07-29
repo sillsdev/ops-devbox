@@ -4,7 +4,7 @@ This repo contains Ansible playbooks that installs our recommended development e
 
 Currently, these playbooks only install software for web development on Linux Mint.
 
-# Web Development Playbooks #\
+# Web Development Playbooks #
 
 er, the only playbooks.
 
