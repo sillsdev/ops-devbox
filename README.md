@@ -52,9 +52,9 @@ From your *home* folder...
 ````
 mkdir src
 cd src
-git clone https://github.com/sillsdev/ops-devbox
+git clone --recurse-submodules https://github.com/sillsdev/ops-devbox
 cd ops-devbox
-ansible-playbook --limit localhost -K
+ansible-playbook -i hosts dev.yml --limit localhost -K
 ````
 
 and wait.
