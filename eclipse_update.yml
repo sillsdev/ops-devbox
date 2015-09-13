@@ -1,0 +1,13 @@
+---
+# Eclipse Update
+- hosts: all
+  name: Eclipse update (to PDT all-in-one)
+  sudo: yes
+  tasks:
+    - command: wget --directory-prefix=/home/vagrant http://download.nus.edu.sg/mirror/eclipse/technology/epp/downloads/release/mars/R/eclipse-php-mars-R-linux-gtk-x86_64.tar.gz
+      args:
+        creates: /home/vagrant/eclipse-php-mars-R-linux-gtk-x86_64.tar.gz
+
+    - shell: rm -rf /usr/lib/eclipse; tar -C /usr/lib/ -xzf /home/vagrant/eclipse-php-mars-R-linux-gtk-x86_64.tar.gz; touch /home/vagrant/eclipse_update
+      args:
+        creates: /home/vagrant/eclipse_update

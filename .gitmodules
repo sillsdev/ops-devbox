@@ -1,6 +1,6 @@
 [submodule "roles_common"]
 	path = roles_common
-	url = git@github.com:sillsdev/ops-ansible-common-roles.git
+	url = https://github.com/sillsdev/ops-ansible-common-roles.git
 	branch = master
 [submodule "roles/apache_config"]
 	path = roles/apache_config

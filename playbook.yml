@@ -1,0 +1,4 @@
+---
+
+- include: xforge.yml
+- include: eclipse_update.yml
