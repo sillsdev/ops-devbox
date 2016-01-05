@@ -11,7 +11,7 @@
         - git
         - gitg
         - chromium-browser
-        - virtualbox-4.3
+        - virtualbox
         - vagrant
         - npm
         - php5-cli
