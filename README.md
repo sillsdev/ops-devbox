@@ -40,7 +40,12 @@ So, what all is installed?  Have a look at the *.yml files.  This dev environmen
 ````
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install ansible git
+sudo apt-get install git
+````
+At the moment (2016 Feb 4) Ansible v2.0.0.2 is [broken on local connections](https://github.com/ansible/ansible/issues/13763). Install v1.9 instead:
+````
+sudo apt-get install python-pip
+sudo pip install ansible==1.9.4
 ````
 
 This upgrades your system and installs ansible and git without which is required to continue with the Ansible Setup described below.

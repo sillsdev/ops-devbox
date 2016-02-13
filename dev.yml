@@ -1,8 +1,6 @@
 - hosts: all
   name: Setup development environment
   sudo: yes
-  roles:
-#    - apache_config
   tasks:
     - apt: name="{{item}}" state=present
       with_items:
@@ -16,6 +14,8 @@
         - npm
         - php5-cli
         
+    - file: src=/usr/bin/nodejs dest=/usr/local/bin/node state=link
+
     - name: install Composer
       shell: php -r "readfile('https://getcomposer.org/installer');" | php -- --install-dir=/usr/local/bin --filename=composer
       args:
@@ -25,6 +25,3 @@
       shell: npm install -g bower
       args:
         creates: /usr/local/bin/bower
-    
-    - file: src=/usr/bin/nodejs dest=/usr/local/bin/node state=link
-
