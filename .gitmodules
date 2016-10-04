@@ -2,6 +2,10 @@
 	path = roles_common
 	url = https://github.com/sillsdev/ops-ansible-common-roles.git
 	branch = master
+[submodule "roles/apache_config"]
+	path = roles/apache_config
+	url = https://github.com/saygoweb/ansible-role-apache.git
+	branch = master-our
 [submodule "roles/mysql_config"]
 	path = roles/mysql_config
 	url = https://github.com/saygoweb/mysql.git
