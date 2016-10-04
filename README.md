@@ -36,11 +36,6 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install git
 ````
-At the moment (2016 Feb 4) Ansible v2.0.0.2 is [broken on local connections](https://github.com/ansible/ansible/issues/13763). Install v1.9 instead:
-````
-sudo apt-get install python-pip
-sudo pip install ansible==1.9.4
-````
 
 ````
 # Install Ansible 2.1
