@@ -6,7 +6,7 @@ Currently, these playbooks only install software for web development on  Ubuntu 
 
 ## Installing Ubuntu GNOME 16.04 LTS off USB ##
 1. Download the [Ubuntu](https://ubuntugnome.org/download/) iso.
-2. Make the bootable USB stick following [these instructions](http://community.linuxmint.com/tutorial/view/744).
+2. Make the bootable USB stick following [these instructions](http://community.linuxmint.com/tutorial/view/744).  Note, if you are going to dual-boot Window 10, use [these instructions](https://www.vanstechelman.eu/content/creating-an-uefi-bootable-linux-usb-stick) to make a UEFI bootable USB stick.  This way, you'll avoid issues when the bootloader is installed.
 3. Install Linux, clicking next as required.
 
 ### Partitioning ###
@@ -64,7 +64,7 @@ You might want to open the systems resource monitor to check on your network tra
 
 ### Annoying Extra Steps ###
 
-I like remarkable as a markdown editor.  However, its no longer in the repos for the latest Mint.  You need to install it manually (via deb) from [this website](http://remarkableapp.github.io/).
+I like [Remarkable](http://remarkableapp.github.io/) as a markdown editor.  However, it's no longer in the repos for the latest Mint.  You need to install it manually (via deb).
 
 ### Known to Work With ###
 
