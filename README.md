@@ -2,19 +2,12 @@
 
 This repo contains Ansible playbooks that installs our recommended development environment.
 
-Currently, these playbooks only install software for web development on Linux Mint.
+Currently, these playbooks only install software for web development on  Ubuntu GNOME 16.04 LTS.
 
-# Web Development Playbooks #
-
-er, the only playbooks.
-
-## Installing Mint ##
-
-Install off USB.
-
-1. Download the iso.
-1. Copy the iso following [these instructions](http://community.linuxmint.com/tutorial/view/744).
-1. Install Mint, clicking next as required.
+## Installing Ubuntu GNOME 16.04 LTS off USB ##
+1. Download the [Ubuntu](https://ubuntugnome.org/download/) iso.
+2. Make the bootable USB stick following [these instructions](http://community.linuxmint.com/tutorial/view/744).  Note, if you are going to dual-boot Window 10, use [these instructions](https://www.vanstechelman.eu/content/creating-an-uefi-bootable-linux-usb-stick) to make a UEFI bootable USB stick.  This way, you'll avoid issues when the bootloader is installed.
+3. Install Linux, clicking next as required.
 
 ### Partitioning ###
 
@@ -38,14 +31,17 @@ So, what all is installed?  Have a look at the *.yml files.  This dev environmen
 ### Initial Manual Setup ###
 
 ````
+# Install Git
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install git
 ````
-At the moment (2016 Feb 4) Ansible v2.0.0.2 is [broken on local connections](https://github.com/ansible/ansible/issues/13763). Install v1.9 instead:
+
 ````
-sudo apt-get install python-pip
-sudo pip install ansible==1.9.4
+# Install Ansible 2.1
+sudo add-apt-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
 ````
 
 This upgrades your system and installs ansible and git without which is required to continue with the Ansible Setup described below.
@@ -68,13 +64,13 @@ You might want to open the systems resource monitor to check on your network tra
 
 ### Annoying Extra Steps ###
 
-I like remarkable as a markdown editor.  However, its no longer in the repos for the latest Mint.  You need to install it manually (via deb) from [this website](http://remarkableapp.github.io/).
+I like [Remarkable](http://remarkableapp.github.io/) as a markdown editor.  However, it's no longer in the repos for the latest Mint.  You need to install it manually (via deb).
 
 ### Known to Work With ###
 
 This procedure has been known to work with:
+- Ubuntu GNOME 16.04.01 LTS (Xenial)
 
-* Linux Mint 17.1
-* Linux Mint 17.2
-* Ubuntu 14.04 (Trusty)
-
+Previous versions
+- Linux Mint
+- Ubuntu 14.04 (Trusty)

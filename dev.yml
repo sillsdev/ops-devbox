@@ -1,8 +1,9 @@
 - hosts: all
   name: Setup development environment
-  sudo: yes
+  become: yes
   tasks:
-    - apt: name="{{item}}" state=present
+    - name: install packages
+      apt: name="{{item}}" state=present
       with_items:
         - geany
         - mono-complete
@@ -12,7 +13,14 @@
         - virtualbox
         - vagrant
         - npm
-        - php5-cli
+
+    - name: install php5
+      apt: name=php5-cli state=present
+      when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'trusty'
+
+    - name: install php7.0
+      apt: name=php7.0-cli state=present 
+      when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial'
         
     - file: src=/usr/bin/nodejs dest=/usr/local/bin/node state=link
 
