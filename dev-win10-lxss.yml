@@ -1,0 +1,21 @@
+- hosts: all
+  name: Setup development environment
+  become: yes
+  tasks:
+    - name: install packages
+      apt: name="{{item}}" state=present
+      with_items:
+        - git
+        - npm
+
+    - name: install php7.0
+      apt: name=php7.0-cli state=present 
+      when: ansible_distribution == 'Ubuntu' and 
+        (ansible_distribution_release == 'xenial' or ansible_distribution_release == 'yakkety')
+        
+    - file: src=/usr/bin/nodejs dest=/usr/local/bin/node state=link
+
+    - name: install Composer
+      shell: php -r "readfile('https://getcomposer.org/installer');" | php -- --install-dir=/usr/local/bin --filename=composer
+      args:
+        creates: /usr/local/bin/composer
